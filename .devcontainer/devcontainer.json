@@ -7,10 +7,20 @@
 
 	"features": {
 		"ghcr.io/devcontainers/features/java:1": {
-			"version": "none",
-			"installMaven": "true",
-			"mavenVersion": "3.8.6",
-			"installGradle": "false"
+			"installGradle": true,
+			"installMaven": true,
+			"installAnt": true,
+			"version": "latest",
+			"jdkDistro": "ms",
+			"gradleVersion": "latest",
+			"mavenVersion": "latest",
+			"antVersion": "latest"
+		},
+		"ghcr.io/akhildevelops/devcontainer-features/android-cli:0": {},
+		"ghcr.io/jarrodcolburn/features/android-sdk:0": {
+			"emulator": true,
+			"platforms": "33",
+			"build-tools": "33.0.2"
 		}
 	},
 
