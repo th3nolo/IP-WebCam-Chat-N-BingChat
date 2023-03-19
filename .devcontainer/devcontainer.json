@@ -1,45 +1,9 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/java
 {
-  "name": "Java",
-  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-  "image": "Dockerfile",
-
-  "features": {
-    "ghcr.io/devcontainers/features/java:1": {
-      "installGradle": true,
-      "installMaven": true,
-      "installAnt": true,
-      "version": "latest",
-      "jdkDistro": "ms",
-      "gradleVersion": "latest",
-      "mavenVersion": "latest",
-      "antVersion": "latest"
-    },
-    "ghcr.io/devcontainers/features/android-studio:0": {},
-    "ghcr.io/akhildevelops/devcontainer-features/android-cli:0": {},
-    "ghcr.io/jarrodcolburn/features/android-sdk:0": {
-      "emulator": true,
-      "platforms": "33",
-      "build-tools": "33.0.2"
-    }
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "devcontainer",
+  "workspaceFolder": "/workspace",
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
   },
-
-  // Configure tool-specific properties.
-  "customizations": {
-    // Configure properties specific to VS Code.
-    "vscode": {
-      "settings": {},
-      "extensions": ["streetsidesoftware.code-spell-checker"]
-    }
-  },
-
-  // Use 'forwardPorts' to make a list of ports inside the container available locally.
-  "forwardPorts": [6080],
-
-  // Use 'postCreateCommand' to run commands after the container is created.
-  "postCreateCommand": "java -version && /usr/local/bin/start-android-studio.sh"
-
-  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-  // "remoteUser": "root"
+  "remoteUser": "root"
 }
