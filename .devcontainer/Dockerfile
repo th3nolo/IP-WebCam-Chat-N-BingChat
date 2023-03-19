@@ -33,7 +33,7 @@ ENV ANDROID_SDK_ROOT /opt/android-sdk
 ENV PATH=$PATH:/opt/android-sdk/cmdline-tools/latest/bin:$ANDROID_SDK_ROOT/tools/bin
 
 # Create sdkmanager.sh script
-RUN echo '#!/bin/bash\nexport PATH=$PATH:/opt/android-sdk/cmdline-tools/latest/bin:$ANDROID_SDK_ROOT/tools/bin\nsdkmanager "$@"' > /usr/local/bin/sdkmanager.sh && \
+RUN echo '#!/bin/bash\n/opt/android-sdk/cmdline-tools/latest/bin/sdkmanager "$@"' > /usr/local/bin/sdkmanager.sh && \
     chmod +x /usr/local/bin/sdkmanager.sh
 
 # Accept licenses and install Android SDK components
