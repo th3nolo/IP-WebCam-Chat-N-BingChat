@@ -1,9 +1,7 @@
 {
-  "dockerComposeFile": "docker-compose.yml",
-  "service": "devcontainer",
+  "name": "Android Java VNC",
+  "dockerFile": "Dockerfile",
+  "forwardPorts": [5901],
   "workspaceFolder": "/workspace",
-  "settings": {
-    "terminal.integrated.shell.linux": "/bin/bash"
-  },
   "remoteUser": "root"
 }
