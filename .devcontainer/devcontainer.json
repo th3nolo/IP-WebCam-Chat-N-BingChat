@@ -2,6 +2,32 @@
   "name": "Android Java VNC",
   "dockerFile": "Dockerfile",
   "forwardPorts": [5901],
+  "mounts": [
+    "source=${localWorkspaceFolder}/workspace,target=/workspace,type=bind"
+  ],
+  "remoteEnv": {
+    "DISPLAY": ":1",
+    "PASSWORD": "calcetinesatomicos"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "vscjava.vscode-java-debug@0.32.0",
+        "vscjava.vscode-java-test@0.25.0",
+        "vscjava.vscode-maven@0.25.0",
+        "vscjava.vscode-java-dependency@0.18.6"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "Your Custom Profile",
+        "terminal.integrated.profiles.linux": {
+          "Your Custom Profile": {
+            "path": "/bin/bash"
+          }
+        }
+      }
+    }
+  },
   "workspaceFolder": "/workspace",
   "remoteUser": "root"
 }
