@@ -2,6 +2,7 @@ FROM mcr.microsoft.com/devcontainers/base:ubuntu
 
 # Install required packages
 RUN apt-get update && apt-get install -y \
+    bash \
     x11vnc \
     xvfb \
     net-tools \
