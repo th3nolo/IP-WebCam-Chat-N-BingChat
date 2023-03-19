@@ -33,14 +33,13 @@ ENV ANDROID_SDK_ROOT /opt/android-sdk
 ENV PATH $PATH:/opt/android-studio/bin
 
 # Download and set up noVNC
-RUN mkdir /opt/noVNC \
+RUN mkdir -p /opt/noVNC/utils/websockify \
     && curl -L https://github.com/novnc/noVNC/archive/v1.3.0.tar.gz | tar xz --strip 1 -C /opt/noVNC \
     && curl -L https://github.com/novnc/websockify/archive/v0.9.0.tar.gz | tar xz --strip 1 -C /opt/noVNC/utils/websockify \
     && ln -s /opt/noVNC/vnc_lite.html /opt/noVNC/index.html
 
 # Copy the start-vnc.sh and start-android-studio.sh scripts
-COPY .devcontainer/start-vnc.sh /usr/local/bin/start-vnc.sh
-COPY .devcontainer/start-android-studio.sh /usr/local/bin/start-android-studio.sh
-
+COPY start-vnc.sh /usr/local/bin/start-vnc.sh
+COPY start-android-studio.sh /usr/local/bin/start-android-studio.sh
 # Set execute permissions for the scripts
 RUN chmod +x /usr/local/bin/start-vnc.sh /usr/local/bin/start-android-studio.sh
